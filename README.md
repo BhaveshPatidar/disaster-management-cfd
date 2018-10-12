@@ -8,7 +8,9 @@ We have thought of creating a web application which helps the disaster-affected 
 ### Community Driven Sessions
 Registering volunteers, registering people, setting-up and scheduling sessions, and notifying people for the face-to-face sessions by trained and certified psychologists to recover from post-disaster trauma. 
 ### Recorded Sessions
-Recorded sessions will be hosted on our website 
+Recorded sessions will be hosted on our website.
+### Donation 
+Donation service where people who want to help the speaker in some way, can donate through the money transfer solutions we aim to provide.
 ### Blog Space
 A blog writing forum/space for people to express their views/ share their experiences on how they tackled the disaster or what went wrong from their side. This will also help them recover faster and better and be helpful for other people. 
 
