@@ -1,4 +1,4 @@
-# 
+# YouAreStrong
 Disaster Management in itself is a tedious task for the government and authorities. It requires other people to take initiatives from their sides and aid the government in the process, by helping each other. One such area which requires a lot of attention and help is the post-disaster psychological aid required by disaster-affected people.
 
 ## Main Idea Description
