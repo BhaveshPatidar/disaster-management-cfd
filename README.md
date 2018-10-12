@@ -2,7 +2,7 @@
 Disaster Management in itself is a tedious task for the government and authorities. It requires other people to take initiatives from their sides and aid the government in the process, by helping each other. One such area which requires a lot of attention and help is the post-disaster psychological aid required by disaster-affected people.
 
 ## Main Idea Description
-We have thought of creating a web application which helps the disaster-affected people recover psychologically from trauma by hosting live video sessions/recorded sessions (using WebRTC APIs)  by trained and certified psychologists who are willing to volunteer to contribute in some manner. We do so by inviting applications from the psychologists through a form. Then, as soon as verification is done, an event is created to notify people of the session. We also keep the recorded sessions for future use.
+We have thought of creating a web application which helps the disaster-affected people recover psychologically from trauma by hosting live video sessions/recorded sessions (using WebRTC APIs)  by trained and certified psychologists who are willing to volunteer to contribute in some manner. We do so by inviting applications from the psychologists through a form. Then, as soon as verification is done, an event is created to notify people of the session. We also keep the recorded sessions for future use. Also, if people find sessions really helpful, they can donate to the trainer through our money transfer service. 
 
 ## Features 
 ### Live/Recorded Video Sessions
