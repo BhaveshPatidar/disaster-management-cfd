@@ -13,5 +13,3 @@
 	<link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-
-  	<button type="button" class="btn btn-outline-success">Login/Signup</button>

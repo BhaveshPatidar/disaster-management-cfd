@@ -4,9 +4,9 @@
 
 
 <!--Form--> 
-<form>
+<form method='POST'>
 	<h4 id='log'>Login</h4>
-	<input type="hidden" id="loginActive" name="loginActive" value="1">
+	<input type='hidden' id="loginActive" name="loginActive" value="1">
   <div class="form-group">
     <label for="email">Email address</label>
     <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
@@ -48,20 +48,18 @@
 			$('#toggleLogin').html('SignUp');
 		
 		}
-	})
+	});
 
 
 	$("#loginSignupButton").click(function() {
 		$.ajax({
-			async: false,
-			datatype: "json",
-			type: "POST",
-			url : "actions.php?action=loginSignup",
-			data: 'email=' + $("#email").val() + "&password=" + $("#password").val()  + "&loginActive=" + $("#loginActive").val(),
+			type:"POST",
+            url: "http://localhost/YouAreStrong/disaster-management-cfd/actions.php?action=loginSignup",
+            data: "email=" + $("#email").val() + "&password=" + $("#password").val(),
 			success: function(result) {
 				alert(result);
 			} 
-		});
+		})
 
 
 	})
