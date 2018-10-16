@@ -13,3 +13,16 @@
 	<link rel="stylesheet" href="/styles.css">
   </head>
   <body>
+
+    <div class="form-inline pull-xs-right">
+      
+      <?php if ($_SESSION['id']) { ?>
+      
+        <a class="btn btn-success-outline" href="?function=logout">Logout</a>
+      
+      <?php } else { ?>
+      
+    <button class="btn btn-success-outline">Login/Signup</button>
+      
+      <?php } ?>
+  </div>
