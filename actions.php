@@ -37,7 +37,7 @@
             	$error = "That email address is already taken.";
             }
             else {
-                $query = "INSERT INTO users (`email`, `password`,`usertype`) VALUES ('". mysqli_real_escape_string($link, $_POST['email'])."', '". mysqli_real_escape_string($link, $_POST['password'])."', '".mysqli_real_escape_string($link, $_POST['usertype'])."')";
+                $query = "INSERT INTO users (`email`, `password`,`usertype`,`state`) VALUES ('". mysqli_real_escape_string($link, $_POST['email'])."', '". mysqli_real_escape_string($link, $_POST['password'])."', '".mysqli_real_escape_string($link, $_POST['usertype'])."' , '".mysqli_real_escape_string($link, $_POST['userstate'])."')";
                 if (mysqli_query($link, $query)) {
                     
                     $_SESSION['id'] = mysqli_insert_id($link);
@@ -97,10 +97,17 @@
             
             $error = "An event name is required.";
             
-        } else if (!$_POST['place']) {
+        } else if (!$_POST['datetime']) {
   
-            $error = "An event city is required.";
+            $error = "An event date and time is required.";
             
+		} else if (!$_POST['place']) {
+  
+            $error = "An event state is required.";
+            
+		} else if (strtotime($_POST['datetime']) <= strtotime(date('d-m-Y H:i:s'))) {
+
+			$error = "This event datetime is not valid";
 		}
         
         if ($error != "") {
@@ -124,7 +131,7 @@
             
         }
 
-		$query = "INSERT INTO events (`name`, `speakerid`, `place`) VALUES ('". mysqli_real_escape_string($link, $_POST['eventName'])."', '".mysqli_real_escape_string($link, $_SESSION['id'])."', '".mysqli_real_escape_string($link, $_POST['place'])."')";                
+		$query = "INSERT INTO events (`name`, `speakerid`, `date`, `place`, `confirmed`) VALUES ('". mysqli_real_escape_string($link, $_POST['eventName'])."', '".mysqli_real_escape_string($link, $_SESSION['id'])."', '".mysqli_real_escape_string($link, $_POST['datetime'])."' , '".mysqli_real_escape_string($link, $_POST['place'])."' , '".mysqli_real_escape_string($link, 'NO')."')";                
 		if (mysqli_query($link, $query)) { 
 			echo 1;
 		}

@@ -22,7 +22,7 @@
 		<div class="userevent">
 			<h3> Your Created Events </h3>
 			<?php 
-				displayUserRegisteredEvents();
+				displayUserCreatedEvents();
 			?> 
 
 			<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#eventModal" id="createEventButton">Create event</button>		

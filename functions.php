@@ -43,4 +43,23 @@
     	echo "Nothing here";	
     }
 
+    function displayUserCreatedEvents() {
+
+    	global $link;
+
+    	if($_SESSION['id'] > 0) {
+
+    		$query = "SELECT * FROM events WHERE speakerid = ". mysqli_real_escape_string($link, $_SESSION['id']);
+    	    $result = mysqli_query($link, $query);
+
+    	    while($row = mysqli_fetch_assoc($result)) {
+
+    	 	echo "<h4 class='title'> Event Name : ".mysqli_real_escape_string($link, $row['name'])."</h1>
+  			   <p class='title'>Event Date and time : ".mysqli_real_escape_string($link, $row['date'])."</p> <p class='title'>Confirmed : ".mysqli_real_escape_string($link, $row['confirmed'])."</p> <p class='title'>Place: ".mysqli_real_escape_string($link, $row['date'])."</p>";
+  			
+    	}
+    	 
+    	}
+    }
+
 ?>
