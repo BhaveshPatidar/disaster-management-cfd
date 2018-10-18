@@ -18,7 +18,7 @@
   
             $error = "Please enter a valid email address.";
             
-}
+		}
         
         if ($error != "") {
             
@@ -87,6 +87,51 @@
             
         }
 
+	}
+
+
+	if($_GET['action'] == 'eventCreate') {
+
+
+       if (!$_POST['eventName']) {
+            
+            $error = "An event name is required.";
+            
+        } else if (!$_POST['place']) {
+  
+            $error = "An event city is required.";
+            
+		}
+        
+        if ($error != "") {
+            
+            echo $error;
+            exit();
+            
+        }
+
+        $query = "SELECT * FROM events WHERE name = '". mysqli_real_escape_string($link, $_POST['eventName'])."' LIMIT 1";
+            $result = mysqli_query($link, $query);
+            if (mysqli_num_rows($result) > 0) {
+
+            	$error = "That event name is already taken.";
+            }
+
+		if ($error != "") {
+            
+            echo $error;
+            exit();
+            
+        }
+
+		$query = "INSERT INTO events (`name`, `speakerid`, `place`) VALUES ('". mysqli_real_escape_string($link, $_POST['eventName'])."', '".mysqli_real_escape_string($link, $_SESSION['id'])."', '".mysqli_real_escape_string($link, $_POST['place'])."')";                
+		if (mysqli_query($link, $query)) { 
+			echo 1;
+		}
+		else {
+
+			echo "Couldn't create event. Please try again after some time.";
+		}	
 	}
 
 ?>

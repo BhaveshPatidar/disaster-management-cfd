@@ -20,15 +20,17 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="?page=dashboard">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Probable Events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Confirmed Events</a>
-      </li>
+      <?php if ($_SESSION['id']) { ?>
+        <li class="nav-item">
+          <a class="nav-link" href="?page=dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Probable Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Confirmed Events</a>
+        </li>
+      <?php } ?>
       <li class="nav-item">
         <a class="nav-link" href="#">Blog</a>
       </li>

@@ -44,6 +44,62 @@
   </div>
 </div>
 
+<!-- Register Event Modal -->
+
+<div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <?php if ($_SESSION['usertype'] == 'User') { ?>
+        	<h4 class="modal-title" id="registerEventModalTitle">Register event</h4>
+        <?php } else { ?>
+			<h4 class="modal-title" id="registerEventModalTitle">Create event</h4>
+   	     <?php } ?>
+        </div>
+      <div class="modal-body"> Fill the event details
+          <div class="alert alert-success" id="loginSuccess"></div>
+<form>
+  <?php if ($_SESSION['usertype'] == 'User') { ?>
+        	<fieldset class="form-group">
+    			<label for="eventId">Event Id</label>
+    			<input type="text" class="form-control" id="eventId" placeholder="Event Id">
+  			</fieldset>
+  <?php } ?>
+  <fieldset class="form-group">
+    <label for="eventName">Event Name</label>
+    <input type="text" class="form-control" id="eventName" placeholder="Event name">
+  </fieldset>
+  <?php if ($_SESSION['usertype'] == 'User') { ?>
+        	<fieldset class="form-group">
+    			<label for="speakerName">Speaker Name</label>
+    			<input type="text" class="form-control" id="speakerName" placeholder="Speaker name">
+  			</fieldset>
+  <?php } ?>
+  
+ 
+  
+  <fieldset class="form-group">
+    			<label for="place">City</label>
+    			<input type="text" class="form-control" id="place" placeholder="City Name">
+  </fieldset>
+
+  
+</form>
+      </div>
+      <div class="modal-footer"> 
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <?php if ($_SESSION['usertype'] == 'User') { ?>
+        	<button type="button" id="eventButton" class="btn btn-primary">Register</button>
+        <?php } else { ?>
+			<button type="button" id="eventButton" class="btn btn-primary">Create</button>
+   	     <?php } ?>
+        </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -66,7 +122,7 @@
 			$('#toggleLogin').html('SignUp');
 		
 		}
-	});
+	})
 
 
 	$("#loginSignupButton").click(function() {
@@ -86,7 +142,25 @@
                 }
 			} 
 		})
+	})
 
+	$("#eventButton").click(function() {
+		$.ajax({
+			type:"POST",
+            url: "actions.php?action=eventCreate",
+            data: "eventName=" + $("#eventName").val()  + "&place=" + $("#place").val(),
+			success: function(result) {
+				 if (result == "1") {
+                    
+                   	$("#loginSuccess").html("Event Successfully Created").show();
+                    
+                } else {
+                    
+                    $("#loginSuccess").html(result).show();
+                    
+                }
+			} 
+		})
 
 	})
 </script>
