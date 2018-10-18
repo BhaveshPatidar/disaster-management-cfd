@@ -13,6 +13,28 @@
 	<link rel="stylesheet" href="/styles.css">
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="?page=home">YouAreStrong</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="?page=dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Probable Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Confirmed Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+    </ul>
+  </div>
+
 
     <div class="form-inline pull-xs-right">
       
@@ -22,7 +44,8 @@
       
       <?php } else { ?>
       
-    <button class="btn btn-success-outline">Login/Signup</button>
+    <button class="btn btn-success-outline" data-toggle="modal" data-target="#myModal">Login/Signup</button>
       
       <?php } ?>
   </div>
+</nav>  

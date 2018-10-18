@@ -4,33 +4,48 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 
 
-<h4 id='log'>Login</h4>
-<!--Form--> 
-<form>	
-	<input type='hidden' id="loginActive" name="loginActive" value="1" >
-	<div class="alert alert-danger" id="loginAlert"></div>
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter email">
-  </div>
-  <div class="form-group">
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="loginModalTitle">Login</h4>
+      </div>
+      <div class="modal-body">
+          <div class="alert alert-danger" id="loginAlert"></div>
+        <form>
+            <input type="hidden" id="loginActive" name="loginActive" value="1">
+  <fieldset class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Email address">
+  </fieldset>
+  <fieldset class="form-group">
     <label for="password">Password</label>
     <input type="password" class="form-control" id="password" placeholder="Password">
-  </div>
- <div class="form-group" id='drop' style='display: none;'>
+  </fieldset>
+  <fieldset class="form-group" id='drop' style='display: none;'>
     <label for="usertype">Signup as</label>
     <select class="form-control" id="usertype">
       <option>User</option>
       <option>Psychologist</option>
     </select>
- </div>
-</form>	
+ </fieldset>
+</form>
+      </div>
+      <div class="modal-footer">
+          <a id="toggleLogin">Sign up</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="loginSignupButton" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <div>
-  	<a href="#" id='toggleLogin'>Sign Up</a>
-  	<button type='button' class="btn btn-primary" id="loginSignupButton">Login</button>
-  	
-  </div> 
+
+
 
 
 <script>

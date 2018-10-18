@@ -4,7 +4,16 @@
 
 	include("views/header.php");
 
-	include("views/home.php");
+	if ($_GET['page'] == "dashboard") {
+
+		include("views/dashboard.php");
+	
+	}
+	else {
+
+		include("views/home.php");
+
+	}
 
 	include("views/footer.php");
 
