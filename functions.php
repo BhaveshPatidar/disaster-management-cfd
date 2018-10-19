@@ -79,24 +79,46 @@
     	}
     }
 
-    function getEventDetails() {
+    function getProbableEventDetails() {
 
     	global $link;
 
 		if($_SESSION['id'] > 0) {	
-            $query =  "SELECT * FROM events WHERE confirmed = 'NO'";
-            $result = mysqli_query($link, $query);
-            while($row = mysqli_fetch_assoc($result)) {
-                $query2 = "SELECT * FROM users WHERE id = ". mysqli_real_escape_string($link, $row['speakerid'])." LIMIT 1";
-                $result2 = mysqli_query($link, $query2);
-                $row2= mysqli_fetch_assoc($result2);
-                echo "<div class='card-body'>Event ID : ".mysqli_real_escape_string($link, $row['eventid'])."  
-                        <h5 class='card-title'>Event Name : ".mysqli_real_escape_string($link, $row['name'])."</h5>
-                        <p class='card-text'>By : ".mysqli_real_escape_string($link, $row2['email'])."</p>
-                      <div class='card-footer text-muted'> on ".mysqli_real_escape_string($link, $row['date'])."  in  ".mysqli_real_escape_string($link, $row['place']). 
-                      "</div></div>";
-            }
-		}
+
+                $query =  "SELECT * FROM events WHERE confirmed = 'NO'";
+                $result = mysqli_query($link, $query);
+                while($row = mysqli_fetch_assoc($result)) {
+                    $query2 = "SELECT * FROM users WHERE id = ". mysqli_real_escape_string($link, $row['speakerid'])." LIMIT 1";
+                    $result2 = mysqli_query($link, $query2);
+                    $row2= mysqli_fetch_assoc($result2);
+                    echo "<div class='card-body'>Event ID : ".mysqli_real_escape_string($link, $row['eventid'])."  
+                            <h5 class='card-title'>Event Name : ".mysqli_real_escape_string($link, $row['name'])."</h5>
+                            <p class='card-text'>By : ".mysqli_real_escape_string($link, $row2['email'])."</p>
+                          <div class='card-footer text-muted'> on ".mysqli_real_escape_string($link, $row['date'])."  in  ".mysqli_real_escape_string($link, $row['place']). 
+                          "</div></div>";
+                }
+        }
+    }
+
+    function getConfirmedEventDetails() {
+
+        global $link;
+
+        if($_SESSION['id'] > 0) {   
+
+                $query =  "SELECT * FROM events WHERE confirmed = 'YES'";
+                $result = mysqli_query($link, $query);
+                while($row = mysqli_fetch_assoc($result)) {
+                    $query2 = "SELECT * FROM users WHERE id = ". mysqli_real_escape_string($link, $row['speakerid'])." LIMIT 1";
+                    $result2 = mysqli_query($link, $query2);
+                    $row2= mysqli_fetch_assoc($result2);
+                    echo "<div class='card-body'>Event ID : ".mysqli_real_escape_string($link, $row['eventid'])."  
+                            <h5 class='card-title'>Event Name : ".mysqli_real_escape_string($link, $row['name'])."</h5>
+                            <p class='card-text'>By : ".mysqli_real_escape_string($link, $row2['email'])."</p>
+                          <div class='card-footer text-muted'> on ".mysqli_real_escape_string($link, $row['date'])."  in  ".mysqli_real_escape_string($link, $row['place']). 
+                          "</div></div>";
+                }
+        }
     }
 
 ?>

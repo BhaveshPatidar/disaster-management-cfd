@@ -238,10 +238,10 @@
                     
                    	$("#loginSuccess").html("Event Successfully Created").show();
                     
-                } else if(result == 1 && $("eventActive").val() == 1) {
+                } else if(result == 1 && $("#eventActive").val() == 1) {
                     
                     $("#loginSuccess").html("Registered for event successfully").show();
-                    
+
                 }else {
                     
                     $("#loginSuccess").html(result).show();

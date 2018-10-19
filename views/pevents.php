@@ -1,6 +1,6 @@
 <div class="card text-center">
   <?php
-    getEventDetails();  
+    getProbableEventDetails();  
   ?> 
     <?php if($_SESSION['usertype'] == 'User') { ?>
        <a href='#' class='btn btn-primary' data-toggle="modal" data-target="#eventModal" id="registerEventButton">Register for event</a>

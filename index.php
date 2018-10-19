@@ -11,6 +11,10 @@
 	} else if ($_GET['page'] == "pevents") {
 		
 		include("views/pevents.php");
+
+	} else if ($_GET['page'] == "cevents") {
+		
+		include("views/cevents.php");
 		
 	} else {
 
