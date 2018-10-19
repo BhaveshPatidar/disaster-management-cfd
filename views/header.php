@@ -25,14 +25,14 @@
           <a class="nav-link" href="?page=dashboard">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Probable Events</a>
+          <a class="nav-link" href="?page=pevents">Probable Events</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Confirmed Events</a>
+          <a class="nav-link" href="?page=cevents">Confirmed Events</a>
         </li>
       <?php } ?>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link" href="?page=blog">Blog</a>
       </li>
     </ul>
   </div>

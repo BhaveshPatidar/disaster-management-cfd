@@ -100,7 +100,7 @@
    	     <?php } ?>
         </div>
       <div class="modal-body"> Fill the event details
-          <div class="alert alert-success" id="loginSuccess"></div>
+          <div class="alert alert-success" id="loginSuccess" style="display: none;"></div>
 <form>
   <?php if ($_SESSION['usertype'] == 'User') { ?>
         	<fieldset class="form-group">
@@ -126,7 +126,7 @@
   			</fieldset>
   <?php } ?>		 
   <fieldset class="form-group">
-    			<label for="place">City</label>
+    			<label for="place">State</label>
     			<select class="form-control" id="place">
 					<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
 					<option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -172,9 +172,11 @@
       <div class="modal-footer"> 
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <?php if ($_SESSION['usertype'] == 'User') { ?>
-        	<button type="button" id="eventButton" class="btn btn-primary">Register</button>
+        	<input type="hidden" id="eventActive" name="eventActive" value="1">
+        	<button type="button" id="EventButton" class="btn btn-primary">Register</button>
         <?php } else { ?>
-			<button type="button" id="eventButton" class="btn btn-primary">Create</button>
+        	<input type="hidden" id="eventActive" name="eventActive" value="0">
+			<button type="button" id="EventButton" class="btn btn-primary">Create</button>
    	     <?php } ?>
         </div>
     </div>
@@ -226,17 +228,21 @@
 		})
 	})
 
-	$("#eventButton").click(function() {
+	$("#EventButton").click(function() {
 		$.ajax({
 			type:"POST",
             url: "actions.php?action=eventCreate",
-            data: "eventName=" + $("#eventName").val()  + "&datetime=" + $("#datetime").val() + "&place=" + $("#place option:selected").val(),
+            data: "eventId=" + $("#eventId").val() + "&eventName=" + $("#eventName").val()  + "&datetime=" + $("#datetime").val() + "&place=" + $("#place option:selected").val() + "&speakerEmail=" + $("#speakerEmail").val() + "&eventActive=" + $("#eventActive").val(),
 			success: function(result) {
-				 if (result == "1") {
+				 if (result == 1 && $("#eventActive").val() == 0) {
                     
                    	$("#loginSuccess").html("Event Successfully Created").show();
                     
-                } else {
+                } else if(result == 1 && $("eventActive").val() == 1) {
+                    
+                    $("#loginSuccess").html("Registered for event successfully").show();
+                    
+                }else {
                     
                     $("#loginSuccess").html(result).show();
                     
@@ -245,6 +251,7 @@
 		})
 
 	})
+
 </script>
 
   </body>

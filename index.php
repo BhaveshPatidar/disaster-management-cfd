@@ -8,8 +8,11 @@
 
 		include("views/dashboard.php");
 	
-	}
-	else {
+	} else if ($_GET['page'] == "pevents") {
+		
+		include("views/pevents.php");
+		
+	} else {
 
 		include("views/home.php");
 
