@@ -1,1 +1,4 @@
-just adding and checking if it worked
+<?php
+
+	echo "BLOG<br>";
+?>
