@@ -121,4 +121,24 @@
         }
     }
 
+    function clearRedundantEvents() {
+
+        global $link;
+
+        if($_SESSION['id'] > 0) {
+
+            $query = "SELECT * FROM events";
+            $result =  $result = mysqli_query($link, $query); 
+            while($row =  mysqli_fetch_assoc($result)) {
+                if(strtotime($row['date']) <= strtotime(date('d-m-Y H:i:s'))) {
+                    $query = "DELETE FROM events WHERE eventid = ".mysqli_real_escape_string($link, $row['eventid']);
+                    mysqli_query($link, $query);
+                    $query = "DELETE FROM userevent WHERE eventid = ".mysqli_real_escape_string($link, $row['eventid']);
+                    mysqli_query($link, $query);
+                }
+            }
+        }  
+
+    }
+
 ?>

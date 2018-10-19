@@ -1,5 +1,6 @@
 <div class="card text-center">
   <?php
+  	clearRedundantEvents();
     getConfirmedEventDetails();  
   ?> 
 

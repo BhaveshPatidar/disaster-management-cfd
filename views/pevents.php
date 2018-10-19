@@ -1,5 +1,6 @@
 <div class="card text-center">
   <?php
+    clearRedundantEvents();
     getProbableEventDetails();  
   ?> 
     <?php if($_SESSION['usertype'] == 'User') { ?>
