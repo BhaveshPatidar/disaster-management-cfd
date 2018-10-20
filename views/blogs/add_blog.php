@@ -6,12 +6,12 @@
 </head>
 
 <body>
-
+	<!--
     <nav class="navbar navbar-expand-sm">
         <a class="navbar-brand" > <h3>StrongBlogs</h3> </a>
-        <a href="blog.php"><h3>Blogs</h3></a>
+        <a href="?page=blog"><h3>Blogs</h3></a>
     </nav>
-
+-->
 <?php if ($_SESSION['id']) { ?>
       
        
@@ -22,23 +22,18 @@
                 <h3> Add Your Blog </h3>
         </div>
     
-        <form action ="insert.php" method="POST"> 
-            <!-- Blog Title field -->
+        <form action ="views/blogs/insert.php" method="POST"> 
+       
             <div class="form-group">
                 <label for="post_title">Post Title :</label>
                 <input type="text" id="post_title" name="post_title" class="form-control"/>
             </div>
-            <!-- Blog Content field -->
+          
             <div class="form-group">
                 <label for="content">Content :</label>
                 <textarea id="content" name="content" class="form-control" rows="6"></textarea>
             </div>
-            <!-- Blog Author Field -->
-            <div class="form-group">
-                <label for="author">Author Name : </label>
-                <input type="text" id="author" name="author" class="form-control"/>
-            </div>
-            <!-- Submit form to DataBase -->
+            
             <button type="submit" class="btn">Submit</button>
         </form>
         </div>
@@ -47,8 +42,8 @@
       
       <?php } else { ?>
       <h3> You need to login first </h3> <br>
-    <button class="btn btn-success-outline" data-toggle="modal" data-target="#myModal">Login/Signup</button>
-      
+    <!-- <button class="btn btn-success-outline" data-toggle="modal" data-target="#myModal">Login/Signup</button>  >
+      -->
       <?php } ?>
 
 

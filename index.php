@@ -16,7 +16,18 @@
 		
 		include("views/cevents.php");
 		
-	} else {
+	} 
+	else if ($_GET['page'] == "blog") {
+		
+		include("views/blogs/blog.php");
+		
+	}
+	else if ($_GET['cr'] == "createblog") {
+		
+		include("views/blogs/add_blog.php");
+		
+	}
+	else {
 
 		include("views/home.php");
 

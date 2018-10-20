@@ -9,7 +9,7 @@
 
 <nav class="navbar navbar-expand-sm">
         <a class="navbar-brand" <h3>StrongBlogs</h3> </a>
-        <a href="add_blog.html"><h3>Create</h3></a>
+        <a href="?cr=createblog"><h3>Create</h3></a>
 </nav>
 
 
@@ -17,7 +17,7 @@
 <?php
 
 	
-	include 'connectbog.php';
+	include 'connectblog.php';
 	$sql = 'SELECT * FROM blog_post order by posted_on DESC;';
 	$result = $conn->query($sql);
 

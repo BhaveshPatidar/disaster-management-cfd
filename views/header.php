@@ -20,7 +20,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <?php if ($_SESSION['id']) { ?>
+      <?php if (isset($_SESSION['id'])) { ?>
         <li class="nav-item">
           <a class="nav-link" href="?page=dashboard">Dashboard</a>
         </li>

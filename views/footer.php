@@ -217,7 +217,7 @@
 			success: function(result) {
 				 if (result == "1") {
                     
-                    window.location.assign("http://localhost/YouAreStrong/disaster-management-cfd/");
+                    window.location.assign("http://localhost/disaster-management-cfd/index.php");
                     
                 } else {
                     
