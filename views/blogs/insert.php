@@ -1,6 +1,19 @@
 <?php
 include 'connectblog.php';
 
+ session_start();
+ if (mysqli_connect_errno()) {
+        
+        print_r(mysqli_connect_error());
+        exit();
+        
+    }
+
+     if ($_GET['function'] == "logout") {
+        
+        session_unset();
+        
+    }
 if($_SESSION['id'] > 0) {
 if( $_SERVER['REQUEST_METHOD'] == 'POST'){
 	
