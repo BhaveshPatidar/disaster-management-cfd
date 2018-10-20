@@ -2,7 +2,7 @@
 
     session_start();
 
-    $link = mysqli_connect("localhost", "phpmyadmin", "hello", "youarestrong");
+    $link = mysqli_connect("localhost", "root", "", "youarestrong");
 
      if (mysqli_connect_errno()) {
         
