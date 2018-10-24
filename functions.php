@@ -63,7 +63,7 @@
               <p class='card-text'>Event Date and Time: ".mysqli_real_escape_string($link, $row2['date'])."</p>
               <p class='card-text'>Confirmed : ".mysqli_real_escape_string($link, $row2['confirmed'])."</p>
               <p class='card-text'>Place: ".mysqli_real_escape_string($link, $row2['place'])."</p>
-            </div>";
+            </div></div></div>";
             }
         }
 
@@ -105,11 +105,12 @@
                     $query2 = "SELECT * FROM users WHERE id = ". mysqli_real_escape_string($link, $row['speakerid'])." LIMIT 1";
                     $result2 = mysqli_query($link, $query2);
                     $row2= mysqli_fetch_assoc($result2);
-                    echo "<div class='card-body'>Event ID : ".mysqli_real_escape_string($link, $row['eventid'])."  
+                    echo "<div class='container'>
+                        <div class='card'><div class='card-body'>Event ID : ".mysqli_real_escape_string($link, $row['eventid'])."  
                             <h5 class='card-title'>Event Name : ".mysqli_real_escape_string($link, $row['name'])."</h5>
                             <p class='card-text'>By : ".mysqli_real_escape_string($link, $row2['email'])."</p>
                           <div class='card-footer text-muted'> on ".mysqli_real_escape_string($link, $row['date'])."  in  ".mysqli_real_escape_string($link, $row['place']). 
-                          "</div></div>";
+                          "</div></div></div></div>";
                 }
         }
     }
@@ -126,11 +127,12 @@
                     $query2 = "SELECT * FROM users WHERE id = ". mysqli_real_escape_string($link, $row['speakerid'])." LIMIT 1";
                     $result2 = mysqli_query($link, $query2);
                     $row2= mysqli_fetch_assoc($result2);
-                    echo "<div class='card-body'>Event ID : ".mysqli_real_escape_string($link, $row['eventid'])."  
+                    echo "<div class='container'>
+                        <div class='card'><div class='card-body'>Event ID : ".mysqli_real_escape_string($link, $row['eventid'])."  
                             <h5 class='card-title'>Event Name : ".mysqli_real_escape_string($link, $row['name'])."</h5>
                             <p class='card-text'>By : ".mysqli_real_escape_string($link, $row2['email'])."</p>
                           <div class='card-footer text-muted'> on ".mysqli_real_escape_string($link, $row['date'])."  in  ".mysqli_real_escape_string($link, $row['place']). 
-                          "</div></div>";
+                          "</div></div></div></div>";
                 }
         }
     }
