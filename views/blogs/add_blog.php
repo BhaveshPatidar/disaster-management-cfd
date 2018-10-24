@@ -1,4 +1,4 @@
- <html>
+<html>
 
 <head>
     <title>Create blog</title>
@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<!--
+    <!--
     <nav class="navbar navbar-expand-sm">
         <a class="navbar-brand" > <h3>StrongBlogs</h3> </a>
         <a href="?page=blog"><h3>Blogs</h3></a>

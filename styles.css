@@ -2,3 +2,10 @@
     color: grey;
     font-size: 18px;
 }
+
+body {
+	height: 100%; 
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

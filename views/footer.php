@@ -15,7 +15,7 @@
         <h4 class="modal-title" id="loginModalTitle">Login</h4>
       </div>
       <div class="modal-body">
-          <div class="alert alert-danger" id="loginAlert"></div>
+          <div class="alert alert-danger" id="loginAlert" style="display:none;"></div>
         <form>
             <input type="hidden" id="loginActive" name="loginActive" value="1">
   <fieldset class="form-group">
@@ -100,7 +100,8 @@
    	     <?php } ?>
         </div>
       <div class="modal-body"> Fill the event details
-          <div class="alert alert-success" id="loginSuccess" style="display: none;"></div>
+          <div class="alert alert-success" id="registerSuccess" style="display: none;"></div>
+          <div class="alert alert-danger" id="registerAlert" style="display:none;"></div>
 <form>
   <?php if ($_SESSION['usertype'] == 'User') { ?>
         	<fieldset class="form-group">
@@ -207,8 +208,6 @@
 		
 		}
 	})
-
-
 	$("#loginSignupButton").click(function() {
 		$.ajax({
 			type:"POST",
@@ -227,7 +226,6 @@
 			} 
 		})
 	})
-
 	$("#EventButton").click(function() {
 		$.ajax({
 			type:"POST",
@@ -240,18 +238,15 @@
                     
                 } else if(result == 1 && $("#eventActive").val() == 1) {
                     
-                    $("#loginSuccess").html("Registered for event successfully").show();
-
+                    $("#registerSuccess").html("Registered for event successfully").show();
                 }else {
                     
-                    $("#loginSuccess").html(result).show();
+                    $("#registerAlert").html(result).show();
                     
                 }
 			} 
 		})
-
 	})
-
 </script>
 
   </body>

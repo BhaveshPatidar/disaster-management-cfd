@@ -8,7 +8,7 @@
 <?php 
 	if($_SESSION['usertype'] == 'User') { ?>
 		
-		<div class="userevent">
+		<div class="userevent" >
 			<h3> Your Registered Events </h3>
 			<?php 
 				displayUserRegisteredEvents();

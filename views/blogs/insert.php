@@ -14,7 +14,6 @@ include 'connectblog.php';
         session_unset();
         
     }
-if($_SESSION['id'] > 0) {
 if( $_SERVER['REQUEST_METHOD'] == 'POST'){
 	
 	$query = "SELECT * FROM users WHERE id = ". mysqli_real_escape_string($conn, $_SESSION['id'])." LIMIT 1";
@@ -41,18 +40,12 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 	
-    header('Location: /disaster-management-cfd/index.php?page=blog');
+    header('Location: http://localhost/disaster-management-cfd/index.php?page=blog');
     $conn->close();
 }
 else{
     echo "Request method not supported";
-	 header('Location: /disaster-management-cfd/index.php?page=blog');
-}
-}
-
-else 
-{
-	 header('Location: /disaster-management-cfd/index.php?page=blog');
+	 header('Location: http://localhost/disaster-management-cfd/index.php?page=blog');
 }
 
 

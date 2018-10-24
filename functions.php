@@ -2,7 +2,7 @@
 
     session_start();
 
-    $link = mysqli_connect("localhost", "root", "", "youarestrong");
+    $link = mysqli_connect("localhost", "phpmyadmin", "hello", "youarestrong");
 
      if (mysqli_connect_errno()) {
         
@@ -28,8 +28,11 @@
     	 
     	    if($row = mysqli_fetch_assoc($result)) {
 
-    	 	    echo "<h1>".mysqli_real_escape_string($link, $row['email'])."</h1>
-  			     <p class='title'>".mysqli_real_escape_string($link, $row['usertype'])."</p>";
+    	 	    echo "<div class='card' style='background:black; color:white;'>
+    <div class='row-fluid'> <div class='span8'>
+            <h6>Email: ".mysqli_real_escape_string($link, $row['email'])."</h6>
+                    </div>
+  			     <h6>Usertype : ".mysqli_real_escape_string($link, $row['usertype'])."</h6></div></div>";
   			    $_SESSION['usertype'] = mysqli_real_escape_string($link, $row['usertype']);
 
     	    } 
@@ -53,8 +56,14 @@
                 $result2 = mysqli_query($link, $query2);
                 $row2 = mysqli_fetch_assoc($result2);
 
-                echo "<h4 class='title'> Event Name : ".mysqli_real_escape_string($link, $row2['name'])."</h1>
-               <p class='title'>Event Date and time : ".mysqli_real_escape_string($link, $row2['date'])."</p> <p class='title'>Confirmed : ".mysqli_real_escape_string($link, $row2['confirmed'])."</p> <p class='title'>Place: ".mysqli_real_escape_string($link, $row2['place'])."</p>";
+                echo " <div class='col-lg-3 col-md-6 mb-4'>
+          <div class='card'>
+            <div class='card-body'>
+              <h4 class='card-title'>Event Name: ".mysqli_real_escape_string($link, $row2['name'])."</h4>
+              <p class='card-text'>Event Date and Time: ".mysqli_real_escape_string($link, $row2['date'])."</p>
+              <p class='card-text'>Confirmed : ".mysqli_real_escape_string($link, $row2['confirmed'])."</p>
+              <p class='card-text'>Place: ".mysqli_real_escape_string($link, $row2['place'])."</p>
+            </div>";
             }
         }
 
@@ -70,9 +79,14 @@
     	    $result = mysqli_query($link, $query);
 
     	    while($row = mysqli_fetch_assoc($result)) {
-
-    	 	echo "<h4 class='title'> Event Name : ".mysqli_real_escape_string($link, $row['name'])."</h1>
-  			   <p class='title'>Event Date and time : ".mysqli_real_escape_string($link, $row['date'])."</p> <p class='title'>Confirmed : ".mysqli_real_escape_string($link, $row['confirmed'])."</p> <p class='title'>Place: ".mysqli_real_escape_string($link, $row['date'])."</p>";
+echo " <div class='container'>
+          <div class='card'>
+            <div class='card-body'>
+              <h4 class='card-title'>Event Name: ".mysqli_real_escape_string($link, $row2['name'])."</h4>
+              <p class='card-text'>Event Date and Time: ".mysqli_real_escape_string($link, $row2['date'])."</p>
+              <p class='card-text'>Confirmed : ".mysqli_real_escape_string($link, $row2['confirmed'])."</p>
+              <p class='card-text'>Place: ".mysqli_real_escape_string($link, $row2['place'])."</p>
+            </div></div></div>";
   			
     	}
     	 
